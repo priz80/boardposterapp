@@ -1,5 +1,6 @@
 {
   "name": "boardposterapp",
+  "homepage": "https://priz80.github.io/boardposterapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
