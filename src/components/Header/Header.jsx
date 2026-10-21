@@ -6,7 +6,7 @@ export const Header = () => {
       <div className="container">
         <div className="header-box">
           <a href="#!" className="header-logo">
-            <img src="/image/logo.svg" alt="logo" />
+            <img src={`${process.env.PUBLIC_URL}/image/logo.svg`} alt="logo" />
             <span>MyAvito</span>
           </a>
           <div className="header-control">
