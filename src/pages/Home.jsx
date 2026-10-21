@@ -1,4 +1,6 @@
-import {Header} from "../components/Header/Header";
+import { Header } from "../components/Header/Header";
+import { Card } from "../components/Card/Card";
+import { cardArray } from "../constants"
 
 export const Home = () => {
   return (
@@ -31,28 +33,16 @@ export const Home = () => {
               <div className="content-main">
                 <h2 className="content-main_title">Все предложения</h2>
                 <div className="content-main_list">
-                  {/* <a
-                    href="/product.html"
-                    className="content-main_list-item"
-                  >
-                    <div className="content-main_list-item--img">
-                      <img src="/image/card-img.jpg" alt="card-img" />
-                    </div>
-                    <h5 className="content-main_list-item--title">
-                      Пвх материал 2й сорт
-                    </h5>
-
-                    <strong className="content-main_list-item--prise">170 ₽</strong>
-
-                    <div className="content-main_list-item--desc-box">
-                      <span className="content-main_list-item--desc">
-                        Казань, р-н Вахитовский
-                      </span>
-                      <span className="content-main_list-item--desc">
-                        10 июля 11:39
-                      </span>
-                    </div>
-                  </a> */}
+                  {cardArray.map((card) => (
+                    <Card
+                      key={card.id}
+                      title={card.title}
+                      prise={card.prise}
+                      adress={card.adress}
+                      data={card.data}
+                      img={card.img}
+                    />
+                  ))}
                 </div>
               </div>
               <div className="content-side">
