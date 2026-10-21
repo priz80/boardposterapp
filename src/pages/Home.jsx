@@ -17,7 +17,7 @@ export const Home = () => {
               </button>
               <button className="btn btn-primary search-btn">
                 <img
-                  src="/image/search.svg"
+                  src={`${process.env.PUBLIC_URL}/image/search.svg`}
                   className="search-btn_item"
                   alt="search"
                 />
@@ -53,7 +53,7 @@ export const Home = () => {
                     <div className="content-side_list-item">
                       <img
                         className="content-side_list-item--img"
-                        src="/image/side-img_truck.svg"
+                        src={`${process.env.PUBLIC_URL}/image/side-img_truck.svg`}
                         alt="side-img_truck"
                       />
                       <h5 className="content-side_list-item--title">
@@ -67,7 +67,7 @@ export const Home = () => {
                     <div className="content-side_list-item">
                       <img
                         className="content-side_list-item--img"
-                        src="/image/side-img_sedan.svg"
+                        src={`${process.env.PUBLIC_URL}/image/side-img_sedan.svg`}
                         alt="side-img_sedan"
                       />
                       <h5 className="content-side_list-item--title">
@@ -81,7 +81,7 @@ export const Home = () => {
                     <div className="content-side_list-item">
                       <img
                         className="content-side_list-item--img"
-                        src="/image/side-img_love.svg"
+                        src={`${process.env.PUBLIC_URL}/image/side-img_love.svg`}
                         alt="side-img_build"
                       />
                       <h5 className="content-side_list-item--title">

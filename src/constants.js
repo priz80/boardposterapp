@@ -5,7 +5,7 @@ export const cardArray = [
     prise: "170 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const cardArray = [
     prise: "171 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const cardArray = [
     prise: "172 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const cardArray = [
     prise: "173 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const cardArray = [
     prise: "174 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
   {
     id: 5,
@@ -45,6 +45,6 @@ export const cardArray = [
     prise: "175 ₽",
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
-    img: "/image/card-img.jpg",
+    img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
   },
 ];

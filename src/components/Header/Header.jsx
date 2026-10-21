@@ -15,7 +15,10 @@ export const Header = () => {
           </div>
 
           <div className="header-burger">
-            <img src="/image/burger.svg" alt="burger button" />
+            <img
+              src={`${process.env.PUBLIC_URL}/image/burger.svg`}
+              alt="burger button"
+            />
           </div>
         </div>
       </div>
