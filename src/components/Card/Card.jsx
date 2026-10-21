@@ -1,8 +1,8 @@
 import "./Card.css";
 
-export const Card = ({title, prise, adress, data, img}) => {
+export const Card = ({ title, prise, adress, data, img }) => {
   return (
-    <a href="/product.html" className="card">
+    <a href={`${process.env.PUBLIC_URL}/product`} className="card">
       <div className="card--img">
         <img src={img} alt="card-img" />
       </div>
