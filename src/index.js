@@ -8,7 +8,8 @@ import { Layout } from "./layouts/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
-const basename = process.env.PUBLIC_URL || "/";
+const basename =
+  process.env.NODE_ENV === "production" ? "/boardposterapp" : "/";
 
 const router = createBrowserRouter(
   [
