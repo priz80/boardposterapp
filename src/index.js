@@ -27,18 +27,6 @@ const router = createBrowserRouter(
   {
     basename: process.env.PUBLIC_URL || "/",
   },
-  // {
-  //   basename:
-  //     process.env.PUBLIC_URL && process.env.PUBLIC_URL !== "/"
-  //       ? new URL(process.env.PUBLIC_URL).pathname
-  //       : "/",
-  // },
-  // {
-  //   basename:
-  //     process.env.PUBLIC_URL && process.env.PUBLIC_URL !== "/"
-  //       ? new URL(process.env.PUBLIC_URL).pathname
-  //       : "/",
-  // },
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
