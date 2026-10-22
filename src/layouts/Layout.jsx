@@ -31,9 +31,9 @@ export const Layout = () => {
       return "объявлений";
     };
 
-   setTitleText(
-     `По Вашему запросу нашлось ${filtered.length} ${getDeclension(filtered.length)}`,
-   );
+    setTitleText(
+      `По Вашему запросу нашлось ${filtered.length} ${getDeclension(filtered.length)}`,
+    );
   };
 
   useEffect(() => {
@@ -52,14 +52,29 @@ export const Layout = () => {
                 type="text"
                 value={searchText}
                 onChange={handleSearch}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearchArray();
+                  }
+                }}
                 placeholder="Поиск по объявлениям"
               />
-              <button className="btn search-clear" style={{ display: "none" }}>
+              <button
+                className="btn search-clear"
+                style={{ display: searchText ? "flex" : "none" }}
+                onClick={() => {
+                  setSearchText("");
+                  setProducts(cardArray);
+                  
+                  setTitleText("Все предложения");
+                }}
+              >
                 <span style={{ color: "gray", fontSize: "28px" }}>×</span>
               </button>
               <button
                 className="btn btn-primary search-btn"
                 onClick={handleSearchArray}
+                disabled={!searchText}
               >
                 <img
                   src={`${process.env.PUBLIC_URL}/image/search.svg`}
