@@ -7,8 +7,9 @@ import { Layout } from "./layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const isDev = process.env.NODE_ENV === "development";
-const basename = isDev ? "/" : "/boardposterapp";
+
+const basename =
+  process.env.NODE_ENV === "development" ? "/" : "/boardposterapp";
 
 const router = createBrowserRouter(
   [
