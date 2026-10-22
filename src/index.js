@@ -25,12 +25,13 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/boardposterapp",
+    basename: "/",
   },
   // {
-  //   basename: process.env.PUBLIC_URL
-  //     ? new URL(process.env.PUBLIC_URL)
-  //     : "/",
+  //   basename:
+  //     process.env.PUBLIC_URL && process.env.PUBLIC_URL !== "/"
+  //       ? new URL(process.env.PUBLIC_URL).pathname
+  //       : "/",
   // },
 );
 
