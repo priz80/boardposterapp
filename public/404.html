@@ -5,12 +5,9 @@
     <meta charset="utf-8">
     <title>MyAvito</title>
     <script>
-        var pathParts = location.pathname.split("/");
-        var repoName = pathParts[1];
-        if (repoName) {
-            window.location.replace(location.origin + "/" + repoName + "/");
-        } else {
-            window.location.replace("/");
+        var pathParts = location.pathname.split("/").filter(Boolean);
+        if (pathParts.length > 0) {
+            window.location.replace(location.origin + "/" + pathParts[0] + "/");
         }
     </script>
 </head>
