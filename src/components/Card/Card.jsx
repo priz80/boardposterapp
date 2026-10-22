@@ -1,8 +1,9 @@
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 export const Card = ({ title, prise, adress, data, img }) => {
   return (
-    <a href={`${process.env.PUBLIC_URL}/product`} className="card">
+    <Link to="/product" className="card">
       <div className="card--img">
         <img src={img} alt="card-img" />
       </div>
@@ -14,6 +15,6 @@ export const Card = ({ title, prise, adress, data, img }) => {
         <span className="card--desc">{adress}</span>
         <span className="card--desc">{data}</span>
       </div>
-    </a>
+    </Link>
   );
 };

@@ -5,16 +5,21 @@
     <meta charset="utf-8">
     <title>MyAvito</title>
     <script>
-        var segmentCount = location.pathname.split("/").length - 1;
-        var relativePath = "/" + location.pathname.slice(segmentCount * -1);
-        window.history.replaceState({}, "", relativePath);
+        var pathParts = location.pathname.split("/");
+        var appPath = "/" + pathParts[1];
+        var jsScript = document.createElement("script");
+        jsScript.src = appPath + "/static/js/main.js";
+        document.body.appendChild(jsScript);
+        var cssLink = document.createElement("link");
+        cssLink.rel = "stylesheet";
+        cssLink.href = appPath + "/static/css/main.css";
+        document.head.appendChild(cssLink);
+        window.history.replaceState({}, "", "/");
     </script>
 </head>
 
 <body>
     <div id="root"></div>
-    <script src="/boardposterapp/static/js/main.js"></script>
-    <link href="/boardposterapp/static/css/main.css" rel="stylesheet">
 </body>
 
 </html>

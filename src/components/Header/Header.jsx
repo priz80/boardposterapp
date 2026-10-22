@@ -1,17 +1,17 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header-box">
-          <a
-            href={`${process.env.PUBLIC_URL}`}
+          <Link to="/"
             className="header-logo"
           >
             <img src={`${process.env.PUBLIC_URL}/image/logo.svg`} alt="logo" />
             <span>MyAvito</span>
-          </a>
+          </Link>
           <div className="header-control">
             <button className="btn btn-outline">Вход регистрация</button>
             <button className="btn btn-primary">Подать объявление</button>

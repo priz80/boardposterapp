@@ -98,10 +98,10 @@ export const Home = () => {
                     <p className="content-side_footer-item">
                       © ООО «Абито», 2026
                     </p>
-                    <a href="#!" className="content-side_footer-item">
+                    <a href="/" className="content-side_footer-item">
                       Политика конфиденциальности
                     </a>
-                    <a href="#!" className="content-side_footer-item">
+                    <a href="/" className="content-side_footer-item">
                       Обработка данных
                     </a>
                   </div>
