@@ -1,4 +1,5 @@
 import { Header } from "../components/Header/Header";
+import { Link } from "react-router-dom";
 
 export const Product = () => {
   return (
@@ -113,12 +114,12 @@ export const Product = () => {
                     <p className="content-side_footer-item">
                       © ООО «Абито», 2026
                     </p>
-                    <a href="/" className="content-side_footer-item">
+                    <Link to="/" className="content-side_footer-item">
                       Положение об Политика конфиденциальности
-                    </a>
-                    <a href="/" className="content-side_footer-item">
+                    </Link>
+                    <Link to="/" className="content-side_footer-item">
                       Обработка данных
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

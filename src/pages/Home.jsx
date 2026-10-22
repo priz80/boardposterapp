@@ -1,6 +1,7 @@
 import { Header } from "../components/Header/Header";
 import { Card } from "../components/Card/Card";
 import { cardArray } from "../constants"
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -98,12 +99,12 @@ export const Home = () => {
                     <p className="content-side_footer-item">
                       © ООО «Абито», 2026
                     </p>
-                    <a href="/" className="content-side_footer-item">
+                    <Link to="/" className="content-side_footer-item">
                       Политика конфиденциальности
-                    </a>
-                    <a href="/" className="content-side_footer-item">
+                    </Link>
+                    <Link to="/" className="content-side_footer-item">
                       Обработка данных
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
