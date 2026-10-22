@@ -20,12 +20,12 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
       },
+      {
+        basename: process.env.PUBLIC_URL
+          ? new URL(process.env.PUBLIC_URL).pathname
+          : "/",
+      },
     ],
-  },
-  {
-    basename: process.env.PUBLIC_URL
-      ? new URL(process.env.PUBLIC_URL).pathname
-      : "/",
   },
 ]);
 
