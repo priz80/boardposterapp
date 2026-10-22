@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { cardArray } from "../constants";
 
 export const Layout = () => {
+  const [titleText, setTitleText] = useState("Все предложения");
   const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState([]);
   const handleSearch = (event) => {
@@ -12,18 +13,30 @@ export const Layout = () => {
 
   const handleSearchArray = () => {
     const searchValue = searchText.toLowerCase();
-    
+
     const filtered = cardArray.filter(
       (p) =>
         p.title.toLowerCase().includes(searchValue) ||
         p.prise.toLowerCase().includes(searchValue),
     );
     setProducts(filtered);
-    
+
+    const getDeclension = (count) => {
+      const lastDigit = count % 10;
+      const lastTwoDigits = count % 100;
+
+      if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return "объявлений";
+      if (lastDigit === 1) return "объявление";
+      if (lastDigit >= 2 && lastDigit <= 4) return "объявления";
+      return "объявлений";
+    };
+
+   setTitleText(
+     `По Вашему запросу нашлось ${filtered.length} ${getDeclension(filtered.length)}`,
+   );
   };
 
   useEffect(() => {
-    
     setProducts(cardArray);
   }, []);
 
@@ -58,7 +71,7 @@ export const Layout = () => {
             </div>
           </div>
         </section>
-        <Outlet context={{ products }} />;
+        <Outlet context={{ products, titleText }} />
       </main>
     </>
   );

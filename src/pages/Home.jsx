@@ -2,13 +2,13 @@ import { Card } from "../components/Card/Card";
 import { Link, useOutletContext } from "react-router-dom";
 
 export const Home = () => {
-  const {products} = useOutletContext();
+  const { products, titleText } = useOutletContext();
   return (
     <section className="content">
       <div className="container">
         <div className="content-box">
           <div className="content-main">
-            <h2 className="content-main_title">Все предложения</h2>
+            <h2 className="content-main_title">{titleText}</h2>
             <div className="content-main_list">
               {products.map((card) => (
                 <Card
