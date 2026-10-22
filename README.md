@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# boardposterapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-приложение — доска объявлений (клон Avito).
 
-## Available Scripts
+## 📦 Стек технологий
 
-In the project directory, you can run:
+- **React 19** — UI-фреймворк
+- **React Router DOM 7** — роутинг
+- **Create React App** — сборка и dev-сервер
+- **CSS** — стили (BEM-подобная методология)
 
-### `npm start`
+## 🏗 Архитектура
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── index.js                    # Точка входа + роутинг
+├── index.css                   # Глобальные стили
+├── constants.js                # Моковые данные товаров
+├── hooks/
+│   └── useSearch.js            # Хук поиска и фильтрации
+├── services/
+│   └── products.js             # Слой данных (API-заглушки)
+├── components/
+│   ├── Card/                   # Карточка товара
+│   ├── Header/                 # Шапка сайта
+│   └── Sidebar/                # Сайдбар "Сервисы и услуги"
+├── layouts/
+│   └── Layout.jsx              # Layout-обёртка + поиск
+└── pages/
+    ├── Home.jsx                # Главная страница
+    └── Product.jsx             # Страница товара
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Запуск
 
-### `npm test`
+### Локальная разработка
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run build`
+Откроется http://localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Production сборка
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Собранные файлы находятся в папке `build/`.
 
-### `npm run eject`
+## 🚀 Деплой
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Проект настроен для деплоя на **GitHub Pages** через GitHub Actions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Настройка
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Settings → Pages → Source** → выбрать **GitHub Actions**
+2. Push в ветку `main` автоматически запускает деплой
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### CI/CD
 
-## Learn More
+GitHub Actions (`deploy.yml`):
+- Установка зависимостей
+- Production сборка
+- Деплой на GitHub Pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Основные функции
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Поиск товаров** — фильтрация по названию и цене
+- **Склонение слов** — автоматическое определение формы ("1 объявление", "2 объявления", "5 объявлений")
+- **Кнопка очистки поиска** — появляется при вводе текста
+- **Страница товара** — детальный просмотр по ID
+- **Lazy loading** — разделение кода на чанки для каждой страницы
 
-### Code Splitting
+## 🔧 Структура данных
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Товары хранятся в `constants.js`:
 
-### Analyzing the Bundle Size
+```js
+{
+  id: number,
+  title: string,      // Название
+  prise: string,      // Цена
+  adress: string,     // Адрес
+  data: string,       // Дата
+  img: string,        // Путь к изображению
+  description: string // Описание
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📦 Зависимости
 
-### Making a Progressive Web App
+```json
+{
+  "react": "^19.3.1",
+  "react-dom": "^19.3.1",
+  "react-router-dom": "^7.18.4",
+  "react-scripts": "5.0.1"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔮 Планы развития
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Подключение MySQL базы данных
+- [ ] Backend на Node.js/Express
+- [ ] Авторизация пользователей
+- [ ] Добавление/редактирование объявлений
+- [ ] Загрузка изображений
+- [ ] Пагинация и сортировка
+- [ ] Фильтры по категориям
