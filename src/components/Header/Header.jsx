@@ -6,12 +6,12 @@ export const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-box">
-          <Link to="/"
+          <a href="/"
             className="header-logo"
           >
             <img src={`${process.env.PUBLIC_URL}/image/logo.svg`} alt="logo" />
             <span>MyAvito</span>
-          </Link>
+          </a>
           <div className="header-control">
             <button className="btn btn-outline">Вход регистрация</button>
             <button className="btn btn-primary">Подать объявление</button>
