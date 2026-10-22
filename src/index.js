@@ -7,6 +7,15 @@ import { Layout } from "./layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+const getBaseName = () => {
+  if (!process.env.PUBLIC_URL) return "/";
+  try {
+    return new URL(process.env.PUBLIC_URL).pathname;
+  } catch {
+    return "/";
+  }
+};
+
 const router = createBrowserRouter(
   [
     {
@@ -24,13 +33,8 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: process.env.PUBLIC_URL
-      ? new URL(process.env.PUBLIC_URL).pathname
-      : "/",
-  },
+  { basename: getBaseName() },
 );
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
