@@ -12,16 +12,18 @@ export const Layout = () => {
 
   const handleSearchArray = () => {
     const searchValue = searchText.toLowerCase();
-
+    
     const filtered = cardArray.filter(
       (p) =>
         p.title.toLowerCase().includes(searchValue) ||
         p.prise.toLowerCase().includes(searchValue),
     );
     setProducts(filtered);
+    
   };
 
   useEffect(() => {
+    
     setProducts(cardArray);
   }, []);
 
