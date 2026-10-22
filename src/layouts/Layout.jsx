@@ -1,44 +1,30 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header/Header";
-import { useEffect, useState } from "react";
-import { cardArray } from "../constants";
+import { useSearch } from "../hooks/useSearch";
+import { getAllProducts } from "../services/products";
 
 export const Layout = () => {
-  const [titleText, setTitleText] = useState("Все предложения");
-  const [searchText, setSearchText] = useState("");
-  const [products, setProducts] = useState([]);
-  const handleSearch = (event) => {
+  const allProducts = getAllProducts();
+  const {
+    searchText,
+    filteredItems: products,
+    titleText,
+    setSearchText,
+    search,
+    clearSearch,
+  } = useSearch(allProducts);
+
+  const handleSearchChange = (event) => {
     setSearchText(event.target.value);
   };
 
-  const handleSearchArray = () => {
-    const searchValue = searchText.toLowerCase();
-
-    const filtered = cardArray.filter(
-      (p) =>
-        p.title.toLowerCase().includes(searchValue) ||
-        p.prise.toLowerCase().includes(searchValue),
-    );
-    setProducts(filtered);
-
-    const getDeclension = (count) => {
-      const lastDigit = count % 10;
-      const lastTwoDigits = count % 100;
-
-      if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return "объявлений";
-      if (lastDigit === 1) return "объявление";
-      if (lastDigit >= 2 && lastDigit <= 4) return "объявления";
-      return "объявлений";
-    };
-
-    setTitleText(
-      `По Вашему запросу нашлось ${filtered.length} ${getDeclension(filtered.length)}`,
-    );
+  const handleSearchSubmit = () => {
+    search(searchText, allProducts);
   };
 
-  useEffect(() => {
-    setProducts(cardArray);
-  }, []);
+  const handleClearSearch = () => {
+    clearSearch(allProducts);
+  };
 
   return (
     <>
@@ -51,10 +37,10 @@ export const Layout = () => {
               <input
                 type="text"
                 value={searchText}
-                onChange={handleSearch}
+                onChange={handleSearchChange}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
-                    handleSearchArray();
+                    handleSearchSubmit();
                   }
                 }}
                 placeholder="Поиск по объявлениям"
@@ -62,18 +48,13 @@ export const Layout = () => {
               <button
                 className="btn search-clear"
                 style={{ display: searchText ? "flex" : "none" }}
-                onClick={() => {
-                  setSearchText("");
-                  setProducts(cardArray);
-                  
-                  setTitleText("Все предложения");
-                }}
+                onClick={handleClearSearch}
               >
                 <span style={{ color: "gray", fontSize: "28px" }}>×</span>
               </button>
               <button
                 className="btn btn-primary search-btn"
-                onClick={handleSearchArray}
+                onClick={handleSearchSubmit}
                 disabled={!searchText}
               >
                 <img
