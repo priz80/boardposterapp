@@ -7,6 +7,9 @@ import { Layout } from "./layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+const isDev = process.env.NODE_ENV === "development";
+const basename = isDev ? "/" : "/boardposterapp";
+
 const router = createBrowserRouter(
   [
     {
@@ -24,9 +27,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: process.env.PUBLIC_URL || "/",
-  },
+  { basename },
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
