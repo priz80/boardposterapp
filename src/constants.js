@@ -6,6 +6,7 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "Покрышки CST внедорожные.",
   },
   {
     id: 1,
@@ -14,6 +15,7 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "Все на подшипниках, болты протянуты.",
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "Продаю не спеша самокат в хорошем состоянии.",
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "Торг возможен.",
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "За период эксплуатации не выявлено ни одной проблемы.",
   },
   {
     id: 5,
@@ -46,5 +51,16 @@ export const cardArray = [
     adress: "Казань, р-н Вахитовский",
     data: "10 июля 11:39",
     img: `${process.env.PUBLIC_URL}/image/card-img.jpg`,
+    description: "Из минусов — нужно прокачать задний тормоз.",
   },
 ];
+
+
+// Продаю не спеша самокат в хорошем состоянии.
+// Торг возможен.
+// За период эксплуатации не выявлено ни одной проблемы.
+// Из минусов — нужно прокачать задний тормоз.
+// Установлен отсекатель сзади.
+// Покрышки CST внедорожные.
+// Все на подшипниках, болты протянуты.
+// Пробег 881км , это немного для такого зверя.
