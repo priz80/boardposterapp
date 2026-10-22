@@ -5,9 +5,7 @@ export const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-box">
-          <a href="/"
-            className="header-logo"
-          >
+          <a href={process.env.PUBLIC_URL} className="header-logo">
             <img src={`${process.env.PUBLIC_URL}/image/logo.svg`} alt="logo" />
             <span>MyAvito</span>
           </a>
