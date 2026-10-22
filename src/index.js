@@ -7,27 +7,29 @@ import { Layout } from "./layouts/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/product/:id",
+          element: <Product />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/product/:id",
-        element: <Product />,
-      },
-      {
-        basename: process.env.PUBLIC_URL
-          ? new URL(process.env.PUBLIC_URL).pathname
-          : "/",
-      },
-    ],
+    basename: process.env.PUBLIC_URL
+      ? new URL(process.env.PUBLIC_URL).pathname
+      : "/",
   },
-]);
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
